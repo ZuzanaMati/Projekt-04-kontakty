@@ -1,5 +1,9 @@
 /* nejsme vcerejsi, pouzivame moderni box model */
-*, :after, :before { box-sizing: border-box; }
+*,
+:after,
+:before {
+	box-sizing: border-box;
+}
 
 body {
 	font-family: sans-serif;
@@ -9,3 +13,55 @@ body {
 h1 {
 	text-align: center;
 }
+
+
+.osoba {
+	border: 2px solid lightgrey;
+	margin-top: 10px;
+	padding: 20px 10px;
+	border-radius: 20px;
+	box-shadow: 1px 1px 5px rgb(159, 234, 244);
+	text-align: center;
+}
+
+.foto img {
+	border-radius: 50%;
+	max-width: 100%
+}
+
+@media screen and (min-width: 540px){
+	.tym {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	.osoba {
+		display: flex;
+		flex: 0 1 calc((100% - 10px) / 2);
+		align-items: center;
+	}
+
+	.popis {
+		flex: 1 1 100%;
+		padding-right: 20px;
+		text-align: left;
+	}
+
+	.foto img {
+		padding: 0 20px;
+	}
+}
+
+@media screen and (min-width: 961px) {
+	.osoba {
+		flex: 0 1 calc((100% - 30px) / 4);
+		flex-direction: column;
+		margin-top: 0px;
+	}
+
+	.popis{
+		padding: 0 20px;
+		text-align:center;
+	}
+} 
